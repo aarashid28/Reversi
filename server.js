@@ -4,20 +4,22 @@ var static = require('node-static');
 /* Include the http server library*/
 var http = require('http');
 
-/* Assume that we are running on Heroku */
+// Assume that we are running on heroku
 var port = process.env.PORT;
 var directory = __dirname + '/public';
 
-/* if we aren't on Heroku, then we need to readjust the port and directory and information and we know that because port won't be set */
+// if we aren't on Heroku, then we need to readjust the port and directory and information and we know that because port won't be set
+
 if(typeof port == 'undefined' || !port) {
 	directory = './public';
 	port = 8080;
-}
+	}
 
-/*Set up a static web-server that will deliver files forom the filesystem */
+//Set up a static web-server that will deliver files forom the file system
+
 var file = new static.Server(directory);
+// Construct an http server that gets files from the file server
 
-/* Construct an http server that gets files from the file server */
 var app = http.createServer(
 		function(request, response) {
 			request.addListener('end', 
