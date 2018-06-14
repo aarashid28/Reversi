@@ -362,7 +362,7 @@ socket.on('game_update', function(payload){
 		return;
 	}
 	
-	$('#my_color').html('<h3 id="my_color">I am '+my_color+'</h3>');
+	$('#my_color').html('<h3 id="my_color">I am '+my_color+' ship</h3>');
 	$('#my_color').append('<h4>It is '+payload.game.whose_turn+'\'s turn. Elapsed time <span id="elapsed"></span></h4>');
 	
 	clearInterval(interval_timer);
@@ -404,28 +404,28 @@ socket.on('game_update', function(payload){
 					$('#'+row+'_'+column).html('<img src="assets/images/empty.gif" alt="empty square"/>');
 				}
 				else if (old_board[row][column] === '?' && board[row][column] === 'w') {
-					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_white.gif" alt="white square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_white-s.gif" alt="white square">');
 				}
 				else if (old_board[row][column] === '?' && board[row][column] === 'b'){
-					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_black.gif" alt="black square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_black-s.gif" alt="black square">');
 				}
 				else if (old_board[row][column] === ' ' && board[row][column] === 'w') {
-					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_white.gif" alt="empty square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_white-s.gif" alt="empty square">');
 				}
 				else if (old_board[row][column] === ' ' && board[row][column] === 'b'){
-					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_black.gif" alt="empty square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/empty_to_black-s.gif" alt="empty square">');
 				}
 				else if (old_board[row][column] === 'w' && board[row][column] === ' ') {
-					$('#'+row+'_'+column).html('<img src="assets/images/white_to_black.gif" alt="black square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/white_to_black-s.gif" alt="black square">');
 				}
 				else if (old_board[row][column] === 'b' && board[row][column] === ' '){
-					$('#'+row+'_'+column).html('<img src="assets/images/black_to_white.gif" alt="white square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/black_to_white-s.gif" alt="white square">');
 				}
 				else if (old_board[row][column] === 'w' && board[row][column] === 'b') {
-					$('#'+row+'_'+column).html('<img src="assets/images/white_to_black.gif" alt="black square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/white_to_black-s.gif" alt="black square">');
 				}
 				else if (old_board[row][column] === 'b' && board[row][column] === 'w'){
-					$('#'+row+'_'+column).html('<img src="assets/images/black_to_white.gif" alt="white square">');
+					$('#'+row+'_'+column).html('<img src="assets/images/black_to_white-s.gif" alt="white square">');
 				}
 				else {
 					$('#'+row+'_'+column).html('<img src="assets/images/error.gif" alt="error"/>');
